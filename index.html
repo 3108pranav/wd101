@@ -1,108 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Form Validation</title>
+  <link rel="stylesheet" href="pp.css" />
 </head>
-<style>
-    .border{
-        width: 600px;
-        height: 450px;
-        padding: 20px;
-        background-color: rgb(255, 255, 255);
-        align-items: center;
-    }
-    #text :invalid:focus{
-        border: 50px solid rgb(85, 0, 255);
 
-    }
-    #center{
-        text-align: center;
-    }
-    #submit{
-        height: 3rem;
-        width: 5rem;
-        border-radius: 10px 10px 10px 10px;
-        background-color: rgba(2, 218, 2, 0.918);
-        padding: 12px;
-    }
-    .form-gaps{
-        display: grid;
-        grid-template-columns: auto auto;
-        column-gap: -500px;
-        padding-left: 20px;
-        padding-right: 20px;
-        row-gap: 30px;
-        margin-bottom: 20px;
-    }
-    .input-box{
-        height: 30px;
-        background-color: rgb(228, 226, 226);
-        box-shadow: 0px 0px 10px 5px rgba(109, 109, 109, 0.731);
-        border-radius: 5px  5px  5px  5px;
-    }
-    #userform{
-        size: 800;
-    }
-    .localData{
-        margin-top: 40px;
-        padding: 30px;
-        width: auto;
-        height: auto;
-        background-color: white;
-    }
-    .local-name{
-        display:flex;
-        justify-content: center;
-    }
-    body{
-        display: grid;
-        grid-template-rows: auto auto auto;
-        justify-items: center;
-    }
-    .local-entries{
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        column-gap: 20px;
-        justify-items: center;
-    }
-</style>
-<script src="index.js"></script>
-<body bgcolor="#C5C5C5" >
+<body>
+  <div id="main">
+    <div id="form-box">
+      <h1>Registration Form </h1>
+      <form id="form">
+        <div id="username" class="inputs">
+          <label for="name">Enter your name</label>
+          <input type="text" required id="name" name="name" placeholder="Your name.." required/>
+        </div>
+        <div id="emailid" class="inputs">
+          <label for="email">Valid Email</label>
+          <input type="email"required id="email" name="email" placeholder="Your email.." required />
+        </div>
+        <div id="passwd" class="inputs">
+          <label for="password">New Password</label>
+          <input type="password" required id="password" name="password" placeholder="Enter Password" required/>
+        </div>
+        <div id="dob_id" class="inputs">
+          <label for="dob">Date of Birth</label>
+          <input id="dob" name="dob" type="date" required/>
+        </div>
+        <div id="agree">
+          <input id="tc" type="checkbox"> I have read and agree to the terms and conditions</input>
+        </div>
+        <button id="submit" type="submit">Submit</button>
+      </form>
+    </div>
+    <div id="table-box">
+        <h1>Entries</h1>
+        <table id="user-table">
+          <tr>
+            <th>Name</th>
+            <th>Email Id</th>
+            <th>Password</th>
+            <th>Date of Birth</th>
+            <th>Accepted terms?</th>
+        
+        </table>
+      </div>
+  </div>
 
-<!-- <h1 id="center">REGISTRSTION FORM</h1> -->
-    <div class="border">
-        <h2 id="center">REGISTRATION FORM</h2>
-        <br>
-    <form id="userform" >
-        <div class="form-gaps">
-        <label for="text">Name:</label>
-        <input type="text" class="input-box" id="name" placeholder="Enter name" required>
-        <label for="text">Email:</label>
-        <input type="email" class="input-box" id="email" placeholder="Enter Email" required>
-        <label for="text">Password:</label>
-        <input type="password" class="input-box" id="pass" placeholder="Enter password" required>
-        <label for="text">Date of birth:</label>
-        <input type="date" id="dob" class="input-box" placeholder="enter date of birth "required>
-        </div>
-        <input type="checkbox" id="checkbox" name="checkbox" value="yes">
-        <label for="checkbox"> Accept terms and conditions</label><br><br>
-        <input type="button" id="submit" value="submit" onclick="store()" required>
-    </form>
-    </div>
-    <div id='output'></div>
-    <div class="localData">
-        <div class="local-name">
-            <h2>Entries</h2>
-        </div>
-        <div class="local-entries">
-            <h3>Name</h3>
-            <h3>Email</h3>
-            <h3>Password</h3>
-            <h3>Date Of Birth</h3>
-        </div>
-    </div>
+
+<script src="pp.js"></script>
 </body>
+
 </html>
